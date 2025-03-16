@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chím Phúc Phát Profile</title>
+    <style>
+        /* Styling tổng quan */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .profile-header {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+        .profile-header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .profile-header h1 {
+            font-size: 24px;
+            margin: 10px 0 5px;
+        }
+        .profile-header .verified-icon {
+            font-size: 16px;
+            color: #4CAF50;
+            margin-left: 5px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .tab {
+            background-color: #ddd;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .tab.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .product-card {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+        .product-card button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .product-card button:hover {
+            background-color: #45a049;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="profile-header">
+            <img src="coder-image.bmp" alt="Profile Picture">
+            <h1>Chím Phúc Phát<span class="verified-icon">✔</span></h1>
+            <p>Web Developer | Product Designer | Tech Enthusiast</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('featured-products')">Sản Phẩm Nổi Bật</button>
+            <button class="tab" onclick="showTab('latest-products')">Sản Phẩm Mới Nhất</button>
+        </div>
+
+        <!-- Featured Products -->
+        <div id="featured-products" class="tab-content active">
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="nuochoa-image.bmp" alt="Product 1">
+                    <h3>Sản Phẩm 1</h3>
+                    <p class="price">200,000₫</p>
+                    <p class="details">Đánh giá: 4.8/5 ⭐ | Đã bán: 1.2k+</p>
+                    <button onclick="window.location.href='https://m.me/1462721187'">Mua Ngay</button>
+                </div>
+                <div class="product-card">
+                    <img src="nuochoa-image.bmp" alt="Product 2">
+                    <h3>Sản Phẩm 2</h3>
+                    <p class="price">300,000₫</p>
+                    <p class="details">Đánh giá: 4.7/5 ⭐ | Đã bán: 1.5k+</p>
+                    <button onclick="window.location.href='https://m.me/1462721187'">Mua Ngay</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latest Products -->
+        <div id="latest-products" class="tab-content">
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="nuochoa-image.bmp" alt="Product 3">
+                    <h3>Sản Phẩm 3</h3>
+                    <p class="price">400,000₫</p>
+                    <p class="details">Đánh giá: 4.9/5 ⭐ | Đã bán: 2.3k+</p>
+                    <button onclick="window.location.href='https://m.me/1462721187'">Mua Ngay</button>
+                </div>
+                <div class="product-card">
+                    <img src="nuochoa-image.bmp" alt="Product 4">
+                    <h3>Sản Phẩm 4</h3>
+                    <p class="price">500,000₫</p>
+                    <p class="details">Đánh giá: 4.6/5 ⭐ | Đã bán: 1.1k+</p>
+                    <button onclick="window.location.href='https://m.me/1462721187'">Mua Ngay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2025 CHIM PHUC PHAT. All rights reserved.
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
